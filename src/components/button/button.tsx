@@ -20,8 +20,8 @@ const Button = ({
       const { offsetY, offsetX } = e;
       const style = ref.current?.style;
       const sizeOffset = 50;
-      style?.setProperty("--effect-top", `${offsetX - sizeOffset}px`);
       style?.setProperty("--effect-top", `${offsetY - sizeOffset}px`);
+      style?.setProperty("--effect-left", `${offsetX - sizeOffset}px`);
     };
     const onClick = (e: MouseEvent) => {
       ref.current?.classList.remove("active");

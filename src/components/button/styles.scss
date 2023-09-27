@@ -20,12 +20,13 @@
     transform: scale(0);
     background: var(--effect-color);
   }
+  &.active::before {
+    border-radius: 50%;
+    animation: ripple var(--effect-duration);
+  }
 }
 
-.effect.active::before {
-  border-radius: 50%;
-  animation: ripple var(--effect-duration);
-}
+
 
 @keyframes ripple {
   from {
