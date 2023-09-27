@@ -1,0 +1,17 @@
+.root {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #90caf9;
+  font-size: 24px;
+  font-weight: 400;
+  transition: transform 0.2s ease-in-out;
+  color: white;
+}
+
+.root.text {
+  background-color: black;
+}
