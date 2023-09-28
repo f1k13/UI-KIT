@@ -1,42 +1,26 @@
-@import "../../styles/veriables.scss";
+@import '../../styles/veriables.scss';
+@import '../../styles/mixins.scss';
 
 .root {
-  border-radius: 5px;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  font-size: 24px;
-  font-weight: 400;
-  color: white;
-  padding: $paddingButton;
-  transition: background-color 250ms;
-  
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	font-size: 24px;
+	font-weight: 400;
+	color: white;
+	padding: $paddingButton;
+	transition: all 0.2s linear;
 }
 
 .text {
-  background: none;
-  color: $variantTextButtonColorText;
-  &:hover {
-    background-color: $variantTextButtonColorHover;
-  }
+	@include button(transparent, $secondaryHover, $main, 1px solid transparent, 1px solid transparent);
 }
 
 .contained {
-  background-color: $variantContainedBG;
-  color: $variantContainedTextColor;
-
-  &:hover {
-    background-color: $variantContainedColorHover;
-  }
+	@include button($main, $mainHover, $mainDark, 1px solid $main, 1px solid $mainHover);
 }
 
 .outlined {
-  background: none;
-  color: $variantOutlinderTextColor;
-  border: 1px solid $variantOutlinderBorder;
-  transition: border 250ms;
-  &:hover {
-    border: 1px solid $variantOutlinderHover;
-    background-color: rgb(24, 30, 37)
-  }
+	@include button(transparent, $secondaryHover, $main, 1px solid $secondary, 1px solid $main);
 }
