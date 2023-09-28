@@ -51,6 +51,7 @@
     1px solid $mainDark,
     1px solid $mainDark
   );
+  cursor: not-allowed;
 }
 .contained.disabled {
   @include button(
@@ -60,6 +61,7 @@
     1px solid $disabledBorder,
     1px solid $disabledBorder
   );
+  cursor: not-allowed;
 }
 .outlined.disabled {
   @include button(
@@ -69,6 +71,95 @@
     1px solid $disabledBorder,
     1px solid $disabledBorder
   );
+  cursor: not-allowed;
 }
 
+.text.secondary {
+  @include button(
+    none,
+    $secondaryColorHover,
+    $secondaryColor,
+    1px solid none,
+    1px solid $secondaryColorHover
+  );
+}
 
+.text.success {
+  @include button(
+    $successBG,
+    $successBGHover,
+    #162817,
+    1px solid $successBG,
+    1px solid $successBGHover
+  );
+}
+
+.text.error {
+  @include button(
+    none,
+    $secondaryHover,
+    $errorColor,
+    1px solid $errorColor,
+    1px solid $errorColor
+  );
+}
+
+.contained.secondary {
+  @include button(
+    $mainDark,
+    $secondaryColorHover,
+    $secondaryColor,
+    1px solid $mainDark,
+    1px solid $secondaryColorHover
+  );
+}
+
+.contained.success {
+  @include button(
+    $successBG,
+    $successBGHover,
+    #162817,
+    1px solid $successBG,
+    1px solid $successBGHover
+  );
+}
+
+.contained.error {
+  @include button(
+    $mainDark,
+    $secondaryHover,
+    $errorColor,
+    1px solid $errorColor,
+    1px solid $errorColor
+  );
+}
+
+.outlined.secondary {
+  @include button(
+    $mainDark,
+    $secondaryColorHover,
+    $secondaryColor,
+    1px solid $mainDark,
+    1px solid $secondaryColorHover
+  );
+}
+
+.outlined.success {
+  @include button(
+    $successBG,
+    $successBGHover,
+    #162817,
+    1px solid $successBG,
+    1px solid $successBGHover
+  );
+}
+
+.outlined.error {
+  @include button(
+    $mainDark,
+    $secondaryHover,
+    $errorColor,
+    1px solid $errorColor,
+    1px solid $errorColor
+  );
+}

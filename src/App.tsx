@@ -4,8 +4,15 @@ import { Button } from "./components";
 const App = () => {
   return (
     <div className="root">
-      <Button variant="text">text</Button>
-      <Button variant="contained">contained</Button>
+      <Button color="secondary" variant="outlined">
+        text
+      </Button>
+      <Button color="success" variant="outlined">
+        contained
+      </Button>
+      <Button color="error" variant="outlined">
+      outlined
+      </Button>
       <Button disabled={true} variant="text">
         text
       </Button>
