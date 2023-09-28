@@ -5,13 +5,13 @@ const Button = ({
   children,
   variant = "text",
   disabled = false,
-  color,
+  color = 'default',
   ...rest
 }: {
   children?: React.ReactNode;
   variant?: "text" | "contained" | "outlined";
   disabler?: boolean;
-  color?: "secondary" | "success" | "error";
+  color?: "secondary" | "success" | "error" | 'default';
 } & ButtonHTMLAttributes<HTMLButtonElement>) => {
   const ref = useRef<HTMLButtonElement | null>(null);
 
@@ -47,7 +47,7 @@ const Button = ({
   return (
     <button
       ref={ref}
-      className={`${styles.root} ${styles[variant]} ${color && styles[color]} ${
+      className={`${styles.root} ${styles[variant]} ${styles[color]} ${
         disabled && styles.disabled
       }`}
       {...rest}

@@ -45,11 +45,11 @@
 
 .text.disabled {
   @include button(
-    $mainDark,
-    $mainDark,
+    transparent,
+    transparent,
     $disabledColor,
-    1px solid $mainDark,
-    1px solid $mainDark
+    1px solid transparent,
+    1px solid transparent
   );
   cursor: not-allowed;
 }
@@ -76,7 +76,7 @@
 
 .text.secondary {
   @include button(
-    none,
+    transparent,
     $secondaryColorHover,
     $secondaryColor,
     1px solid none,
@@ -156,7 +156,7 @@
 
 .outlined.error {
   @include button(
-    $mainDark,
+    transparent,
     $secondaryHover,
     $errorColor,
     1px solid $errorColor,
