@@ -1,26 +1,74 @@
-@import '../../styles/veriables.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/veriables.scss";
+@import "../../styles/mixins.scss";
 
 .root {
-	border-radius: 5px;
-	cursor: pointer;
-	outline: none;
-	border: none;
-	font-size: 24px;
-	font-weight: 400;
-	color: white;
-	padding: $paddingButton;
-	transition: all 0.2s linear;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  padding: $paddingButton;
+  transition: all 0.2s linear;
 }
 
 .text {
-	@include button(transparent, $secondaryHover, $main, 1px solid transparent, 1px solid transparent);
+  @include button(
+    transparent,
+    $secondaryHover,
+    $main,
+    1px solid transparent,
+    1px solid transparent
+  );
 }
 
 .contained {
-	@include button($main, $mainHover, $mainDark, 1px solid $main, 1px solid $mainHover);
+  @include button(
+    $main,
+    $mainHover,
+    $mainDark,
+    1px solid $main,
+    1px solid $mainHover
+  );
 }
 
 .outlined {
-	@include button(transparent, $secondaryHover, $main, 1px solid $secondary, 1px solid $main);
+  @include button(
+    transparent,
+    $secondaryHover,
+    $main,
+    1px solid $secondary,
+    1px solid $main
+  );
 }
+
+.text.disabled {
+  @include button(
+    $mainDark,
+    $mainDark,
+    $disabledColor,
+    1px solid $mainDark,
+    1px solid $mainDark
+  );
+}
+.contained.disabled {
+  @include button(
+    $disabledBorder,
+    $disabledBorder,
+    $disabledColor,
+    1px solid $disabledBorder,
+    1px solid $disabledBorder
+  );
+}
+.outlined.disabled {
+  @include button(
+    none,
+    rgb(16, 20, 24),
+    $disabledColor,
+    1px solid $disabledBorder,
+    1px solid $disabledBorder
+  );
+}
+
+
