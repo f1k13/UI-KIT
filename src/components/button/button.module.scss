@@ -1,54 +1,26 @@
+@import '../../styles/veriables.scss';
+@import '../../styles/mixins.scss';
+
 .root {
-  width: 200px;
-  height: 50px;
-  border-radius: 5px;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background-color: #90caf9;
-  font-size: 24px;
-  font-weight: 400;
-  color: white;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	font-size: 24px;
+	font-weight: 400;
+	color: white;
+	padding: $paddingButton;
+	transition: all 0.2s linear;
 }
 
-.effect {
-  position: relative;
-  overflow: hidden;
-  --effect-name: ripple;
-  --effect-duration: 1000ms;
-  --effect-top: 0px;
-  --effect-left: 0px;
-  --effect-height: 100px;
-  --effect-width: 100px;
-  --effect-color: #ffffff;
+.text {
+	@include button(transparent, $secondaryHover, $main, 1px solid transparent, 1px solid transparent);
 }
 
-.effect::before {
-  content: "";
-  position: absolute;
-  opacity: 0.3;
-
-  top: var(--effect-top);
-  left: var(--effect-left);
-  width: var(--effect-width);
-  height: var(--effect-height);
-  border-radius: 50%;
-  transform: scale(0);
-  background: var(--effect-color);
+.contained {
+	@include button($main, $mainHover, $mainDark, 1px solid $main, 1px solid $mainHover);
 }
 
-.effect.active::before {
-  border-radius: 50%;
-  animation: ripple var(--effect-duration);
-}
-
-@keyframes ripple {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(6);
-    opacity: 0;
-  }
+.outlined {
+	@include button(transparent, $secondaryHover, $main, 1px solid $secondary, 1px solid $main);
 }

@@ -1,11 +1,13 @@
-
+import './styles/styles.scss'
 import { Button } from "./components";
 
 const App = () => {
   
   return (
-    <div>
-      <Button>text</Button>
+    <div className='root'>
+      <Button variant='text'>text</Button>
+      <Button variant='contained'>contained</Button>
+      <Button variant='outlined'>outlined</Button>
     </div>
   );
 };
