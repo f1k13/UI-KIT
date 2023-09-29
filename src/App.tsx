@@ -1,32 +1,10 @@
 import "./styles/styles.scss";
-import { Button } from "./components";
+import { Button, TextField } from "./components";
 
 const App = () => {
   return (
     <div className="root">
-      <Button size="lg" variant={"text"}>
-        text
-      </Button>
-      <Button variant={"contained"}>contained</Button>
-      <Button variant={"outlined"}>outlined</Button>
-      <Button color="secondary" variant="outlined">
-        text
-      </Button>
-      <Button color="success" variant="outlined">
-        contained
-      </Button>
-      <Button color="error" variant="outlined">
-        outlined
-      </Button>
-      <Button disabled={true} variant="text">
-        text
-      </Button>
-      <Button disabled={true} variant="contained">
-        contained
-      </Button>
-      <Button disabled={true} variant="outlined">
-        outlined
-      </Button>
+      <TextField label="standart"></TextField>
     </div>
   );
 };

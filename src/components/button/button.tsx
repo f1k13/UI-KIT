@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, useEffect, useRef } from "react";
 import styles from "./button.module.scss";
 import "./styles.scss";
+import { SizeType } from "@/types/SizeType";
 const Button = ({
   children,
   variant = "text",
@@ -13,7 +14,7 @@ const Button = ({
   variant?: "text" | "contained" | "outlined";
   disabler?: boolean;
   color?: "secondary" | "success" | "error" | "default";
-  size?: "lg" | "sm" | "md";
+  size?: SizeType;
 } & ButtonHTMLAttributes<HTMLButtonElement>) => {
   const ref = useRef<HTMLButtonElement | null>(null);
 

@@ -1,0 +1,23 @@
+@import "../../styles/veriables.scss";
+@import "../../styles/mixins.scss";
+.root {
+  padding: $sm;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  transition: all 0.2s linear;
+}
+
+.standard {
+  background: none;
+  border-bottom: 1px solid #b8b9ba;
+  color: #ffff;
+  font-size: 18px;
+  &:hover {
+    border-bottom: 1px solid #e2e2e2;
+  }
+  &:focus {
+    border-bottom: 1px solid #66b2ff;
+  }
+  
+}
