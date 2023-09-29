@@ -4,9 +4,11 @@ import { Button } from "./components";
 const App = () => {
   return (
     <div className="root">
-      <Button variant={'text'}>text</Button>
-      <Button variant={'contained'}>contained</Button>
-      <Button variant={'outlined'}>outlined</Button>
+      <Button size="lg" variant={"text"}>
+        text
+      </Button>
+      <Button variant={"contained"}>contained</Button>
+      <Button variant={"outlined"}>outlined</Button>
       <Button color="secondary" variant="outlined">
         text
       </Button>
@@ -14,7 +16,7 @@ const App = () => {
         contained
       </Button>
       <Button color="error" variant="outlined">
-      outlined
+        outlined
       </Button>
       <Button disabled={true} variant="text">
         text

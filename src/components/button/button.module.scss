@@ -9,10 +9,18 @@
   font-size: 24px;
   font-weight: 400;
   color: white;
-  padding: $paddingButton;
+  padding: $sm;
   transition: all 0.2s linear;
 }
-
+.root.sm {
+  padding: $sm;
+}
+.root.lg {
+  padding: $lg;
+}
+.root.md {
+  padding: $md;
+}
 .text {
   @include button(
     transparent,
@@ -65,11 +73,11 @@
 }
 .outlined.disabled {
   @include button(
-    none,
-    rgb(16, 20, 24),
+    transparent,
+    transparent,
     $disabledColor,
-    1px solid $disabledBorder,
-    1px solid $disabledBorder
+    1px solid transparent,
+    1px solid transparent
   );
   cursor: not-allowed;
 }
@@ -79,7 +87,7 @@
     transparent,
     $secondaryColorHover,
     $secondaryColor,
-    1px solid none,
+    1px solid transparent,
     1px solid $secondaryColorHover
   );
 }
@@ -106,10 +114,10 @@
 
 .contained.secondary {
   @include button(
-    $mainDark,
+    transparent,
     $secondaryColorHover,
     $secondaryColor,
-    1px solid $mainDark,
+    1px solid transparent,
     1px solid $secondaryColorHover
   );
 }
@@ -126,7 +134,7 @@
 
 .contained.error {
   @include button(
-    $mainDark,
+    transparent,
     $secondaryHover,
     $errorColor,
     1px solid $errorColor,
@@ -136,10 +144,10 @@
 
 .outlined.secondary {
   @include button(
-    $mainDark,
+    transparent,
     $secondaryColorHover,
     $secondaryColor,
-    1px solid $mainDark,
+    1px solid transparent,
     1px solid $secondaryColorHover
   );
 }
