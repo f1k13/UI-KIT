@@ -23,6 +23,12 @@ const meta = {
       },
       options: ["lg", "md", "sm"],
     },
+    label: {
+      type: "string",
+      control: {
+        type: "text",
+      },
+    },
   },
 } satisfies Meta<typeof TextField>;
 

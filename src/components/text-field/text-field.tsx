@@ -8,6 +8,7 @@ const TextField = ({
   defaultValue,
   size = "md",
   label,
+  
 }: {
   variant?: "outlined" | "filled" | "standart";
   onChange?: (value: string) => void;
