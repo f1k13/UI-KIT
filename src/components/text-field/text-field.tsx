@@ -1,21 +1,22 @@
 import { ChangeEvent, useState } from "react";
 import styles from "./text-field.module.scss";
-import { SizeType } from "@/types/SizeType";
 
 const TextField = ({
   variant = "standard",
   onChange,
   defaultValue,
-  size = "md",
+  size = "normal",
   label,
   onFocus,
+  status = "default",
 }: {
   variant?: "outlined" | "filled" | "standard";
   onChange?: (value: string) => void;
   defaultValue?: string;
-  size?: SizeType;
+  size?: "sm" | "normal";
   label?: string;
   onFocus?: () => void;
+  status?: "error" | "success" | "warning" | "default";
 }) => {
   const [value, setValue] = useState<string>(defaultValue || "");
   const [isFocus, setIsFocus] = useState<boolean>(false);
@@ -35,7 +36,7 @@ const TextField = ({
     setIsFocus(false);
   };
 
-  const labelStyles = `${styles[variant]} ${styles.label}  ${
+  const labelStyles = `${styles[variant]} ${styles.label} ${styles[status]}  ${
     isFocus
       ? styles.labelActive
       : value
@@ -49,7 +50,7 @@ const TextField = ({
         id={label}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        className={`${styles.root} ${styles[variant]} ${styles[size]} `}
+        className={`${styles.root} ${styles[variant]} ${styles[size]} ${styles[status]} `}
         onChange={handleChange}
       />
       <label className={labelStyles} htmlFor={label}>

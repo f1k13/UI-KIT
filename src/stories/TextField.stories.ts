@@ -28,6 +28,13 @@ const meta = {
       control: {
         type: "text",
       },
+      status: {
+        type: "string",
+        control: {
+          type: "radio",
+        },
+        options: ["success", "warning", "error"],
+      },
     },
   },
 } satisfies Meta<typeof TextField>;
