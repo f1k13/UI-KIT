@@ -1,7 +1,7 @@
 @import "../../styles/veriables.scss";
 @import "../../styles/mixins.scss";
 .root {
-  padding: $sm;
+ 
   outline: none;
   border: none;
   font-size: 18px;
@@ -13,11 +13,28 @@
   border-bottom: 1px solid #b8b9ba;
   color: #ffff;
   font-size: 18px;
+  width: 400px;
   &:hover {
     border-bottom: 1px solid #e2e2e2;
   }
   &:focus {
     border-bottom: 1px solid #66b2ff;
+
   }
-  
+}
+.wrap input:focus + label {
+  transform: translateY(-20px);
+  color: #66b2ff;
+}
+.label {
+  color: #b7b8b9;
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  pointer-events: none;
+  transition: 0.2s linear;
+}
+.wrap{
+  position: relative;
 }

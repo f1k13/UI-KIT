@@ -4,7 +4,7 @@ import { Button, TextField } from "./components";
 const App = () => {
   return (
     <div className="root">
-      <TextField label="standart"></TextField>
+      <TextField variant="standart" label="standart"></TextField>
     </div>
   );
 };
