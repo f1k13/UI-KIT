@@ -18,24 +18,30 @@ const TextField = ({
   onFocus?: () => void;
 }) => {
   const [value, setValue] = useState<string>(defaultValue || "");
-  const [isFocus, setIsFocus] = useState<boolean>(false)
+  const [isFocus, setIsFocus] = useState<boolean>(false);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(e.target.value);
     }
     setValue(e.target.value);
   };
-  
+
   const handleFocus = () => {
-    onFocus && onFocus()
-    setIsFocus(true)
-  }
-  
+    onFocus && onFocus();
+    setIsFocus(true);
+  };
+
   const handleBlur = () => {
-    setIsFocus(false)
-  }
-  
-  const labelStyles = `${styles.label} ${isFocus ? styles.labelActive : value ? styles.labelActive : styles.labelInactive}`
+    setIsFocus(false);
+  };
+
+  const labelStyles = `${styles[variant]} ${styles.label}  ${
+    isFocus
+      ? styles.labelActive
+      : value
+      ? styles.labelActive
+      : styles.labelInactive
+  }`;
 
   return (
     <div className={styles.wrap}>
