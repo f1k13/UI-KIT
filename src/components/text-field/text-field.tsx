@@ -8,31 +8,45 @@ const TextField = ({
   defaultValue,
   size = "md",
   label,
+  onFocus,
 }: {
   variant?: "outlined" | "filled" | "standard";
   onChange?: (value: string) => void;
   defaultValue?: string;
   size?: SizeType;
   label?: string;
+  onFocus?: () => void;
 }) => {
   const [value, setValue] = useState<string>(defaultValue || "");
+  const [isFocus, setIsFocus] = useState<boolean>(false)
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(e.target.value);
-      setValue(value);
     }
-    console.log(defaultValue);
+    setValue(e.target.value);
   };
+  
+  const handleFocus = () => {
+    onFocus && onFocus()
+    setIsFocus(true)
+  }
+  
+  const handleBlur = () => {
+    setIsFocus(false)
+  }
+  
+  const labelStyles = `${styles.label} ${isFocus ? styles.labelActive : value ? styles.labelActive : styles.labelInactive}`
 
   return (
     <div className={styles.wrap}>
       <input
         id={label}
-        required
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         className={`${styles.root} ${styles[variant]} ${styles[size]} `}
         onChange={handleChange}
-      ></input>
-      <label className={`${styles.label}`} htmlFor={label}>
+      />
+      <label className={labelStyles} htmlFor={label}>
         {label}
       </label>
     </div>

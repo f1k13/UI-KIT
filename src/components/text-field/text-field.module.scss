@@ -1,7 +1,8 @@
-@import "../../styles/veriables.scss";
+@import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
+
 .root {
-  padding: 5px 5px;
+  padding: 0;
   outline: none;
   border: none;
   font-size: 18px;
@@ -13,7 +14,6 @@
   border-bottom: 1px solid #b8b9ba;
   color: #ffff;
   font-size: 18px;
-  width: 400px;
   &:hover {
     border-bottom: 1px solid #e2e2e2;
   }
@@ -21,20 +21,34 @@
     border-bottom: 1px solid #66b2ff;
   }
 }
-.wrap .standard:focus + label {
-  transform: translateY(-20px);
 
-  color: #66b2ff;
-}
+//.wrap .standard:focus + label {
+//  transform: translateY(-20px);
+//  color: $main;
+//}
+
 .label {
   color: #b7b8b9;
   font-size: 20px;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
   pointer-events: none;
   transition: 0.2s linear;
 }
+
+
+.labelActive {
+  position: absolute;
+  color: $mainHover;
+  font-size: 0.8rem;
+  bottom: 1.2rem;
+  left: 0;
+}
+
+.labelInactive {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+}
+
 .wrap {
   position: relative;
 }
@@ -46,7 +60,6 @@
   color: #ffff;
   border-radius: 5px;
   outline: none;
-  border: none;
   height: 50px;
   &:hover {
     border-bottom: 1px solid #e2e2e2;
