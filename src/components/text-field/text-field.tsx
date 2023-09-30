@@ -9,6 +9,8 @@ const TextField = ({
   label,
   onFocus,
   status = "default",
+  type,
+  disabled = false,
 }: {
   variant?: "outlined" | "filled" | "standard";
   onChange?: (value: string) => void;
@@ -17,6 +19,8 @@ const TextField = ({
   label?: string;
   onFocus?: () => void;
   status?: "error" | "success" | "warning" | "default";
+  type?: string;
+  disabled?: boolean;
 }) => {
   const [value, setValue] = useState<string>(defaultValue || "");
   const [isFocus, setIsFocus] = useState<boolean>(false);
@@ -36,7 +40,9 @@ const TextField = ({
     setIsFocus(false);
   };
 
-  const labelStyles = `${styles[variant]} ${styles.label} ${styles[status]}  ${
+  const labelStyles = `${styles[variant]} ${styles.label} ${
+    disabled && styles.disabled
+  } ${styles[status]}  ${
     isFocus
       ? styles.labelActive
       : value
@@ -47,10 +53,14 @@ const TextField = ({
   return (
     <div className={styles.wrap}>
       <input
+        disabled={disabled}
+        type={type}
         id={label}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        className={`${styles.root} ${styles[variant]} ${styles[size]} ${styles[status]} `}
+        className={`${styles.root} ${styles[variant]} ${
+          disabled && styles.disabled
+        } ${styles[size]} ${styles[status]} `}
         onChange={handleChange}
       />
       <label className={labelStyles} htmlFor={label}>

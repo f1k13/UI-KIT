@@ -13,7 +13,7 @@ const Button = ({
 }: {
   children?: React.ReactNode;
   variant?: "text" | "contained" | "outlined";
-  disabler?: boolean;
+  disabled?: boolean;
   color?: ColorType;
   size?: SizeType;
 } & ButtonHTMLAttributes<HTMLButtonElement>) => {

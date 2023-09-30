@@ -4,9 +4,17 @@ import { TextField } from "./components";
 const App = () => {
   return (
     <div className="root">
-      <TextField status="warning" variant="standard" label="standard"></TextField>
-      <TextField status="warning" variant="filled" label="filled"></TextField>
-      <TextField status="warning" variant="outlined" label="outlined"></TextField>
+      <TextField
+        disabled={true}
+        variant="standard"
+        label="standard"
+      ></TextField>
+      <TextField disabled={true} variant="filled" label="filled"></TextField>
+      <TextField
+        disabled={true}
+        variant="outlined"
+        label="outlined"
+      ></TextField>
     </div>
   );
 };

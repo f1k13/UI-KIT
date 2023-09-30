@@ -28,12 +28,18 @@ const meta = {
       control: {
         type: "text",
       },
-      status: {
-        type: "string",
-        control: {
-          type: "radio",
-        },
-        options: ["success", "warning", "error"],
+    },
+    status: {
+      type: "string",
+      control: {
+        type: "radio",
+      },
+      options: ["success", "warning", "error"],
+    },
+    disabled: {
+      type: "boolean",
+      control: {
+        type: "boolean",
       },
     },
   },
