@@ -3,14 +3,13 @@ import styles from "./text-field.module.scss";
 import { SizeType } from "@/types/SizeType";
 
 const TextField = ({
-  variant = "standart",
+  variant = "standard",
   onChange,
   defaultValue,
   size = "md",
   label,
-  
 }: {
-  variant?: "outlined" | "filled" | "standart";
+  variant?: "outlined" | "filled" | "standard";
   onChange?: (value: string) => void;
   defaultValue?: string;
   size?: SizeType;
@@ -22,7 +21,9 @@ const TextField = ({
       onChange(e.target.value);
       setValue(value);
     }
+    console.log(defaultValue);
   };
+
   return (
     <div className={styles.wrap}>
       <input
@@ -31,7 +32,7 @@ const TextField = ({
         className={`${styles.root} ${styles[variant]} ${styles[size]} `}
         onChange={handleChange}
       ></input>
-      <label className={styles.label} htmlFor={label}>
+      <label className={`${styles.label}`} htmlFor={label}>
         {label}
       </label>
     </div>

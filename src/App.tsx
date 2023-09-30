@@ -4,7 +4,7 @@ import { TextField } from "./components";
 const App = () => {
   return (
     <div className="root">
-      <TextField variant="standart" label="standart"></TextField>
+      <TextField variant="standard" label="standard"></TextField>
       <TextField variant="filled" label="filled"></TextField>
     </div>
   );
