@@ -48,7 +48,7 @@ const TextField = ({
       : value
       ? styles.labelActive
       : styles.labelInactive
-  }`;
+  } ${!isFocus && styles.labelChangeColor}`;
 
   return (
     <div className={styles.wrap}>

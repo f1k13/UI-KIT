@@ -8,3 +8,14 @@
   }
 }
 
+@mixin textField($background, $hover, $border, $borderHover, $focus, $color) {
+  background-color: $background;
+  color: $color;
+  border-bottom: $border;
+  &:hover {
+    border-bottom: $borderHover;
+  }
+  &:focus {
+    border-bottom: $focus;
+  }
+}
