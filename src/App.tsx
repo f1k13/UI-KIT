@@ -5,16 +5,13 @@ const App = () => {
   return (
     <div className="root">
       <TextField
-        disabled={true}
-        variant="standard"
         label="standard"
-      ></TextField>
-      <TextField disabled={true} variant="filled" label="filled"></TextField>
+      />
+      <TextField variant="filled" label="filled"/>
       <TextField
-        disabled={true}
         variant="outlined"
         label="outlined"
-      ></TextField>
+      />
     </div>
   );
 };
